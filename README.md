@@ -83,12 +83,36 @@ sudo apt install caddy
  
  Go to domain website and selete manage domain add 2 A records 
  
-  Name = @ Value = <server ip>
-  Name = www Value = <srver ip>
+  Name = @ Value = server ip
+  Name = www Value = srver ip
   
   Start the caddy server ```sudo caddy run```
   
   
   now we can access our application by typing oru domain in browser 
+
+
+## Step 6. Enable caddy to run as a service
+
+if we close the ssh section the application will stop that why we need to run our caddy to run as a service
+
+first stop the application by ```pm2 stop app.js``` check by ```pm2 ls```
+
+we need to run as a service both pm2 and caddy
+
+```pm2 startup`` start pm2 when server reboot ( copy and paste the out put command)
+Caddy as a service ```sudo systemct start caddy``` and ```sudo systemctl enable caddy```
+
+Copy the content of caddy file in demo_expess directory and paste it on /etc/caddy/Caddyfile
+
+now start te caddy  by ``` sudo caddy start``` ifit get an error msg just stop the caddy and re run it ```sudo caddy start```
+
+now start pm2 ```pm2 start app.js```
+  
+  
+  
+  
+  
+
 
 
