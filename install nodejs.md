@@ -36,16 +36,19 @@ which npm
 ## Installing NVM (Node Version Manager) by downloading and running a script
 
 
-
+```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+```
 
 The command above will clone the NVM repository from Github to the ~/.nvm directory:
 
 Close and reopen your terminal to start using nvm or run the following to use it now:
 
+```
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+```
 As the output above says, you should either close and reopen the terminal or run the commands to add the path to nvm script to the current shell session. You can do whatever is easier for you.
 
 Once the script is in your PATH, verify that nvm was properly installed by typing:
@@ -90,6 +93,7 @@ Extra - [Optional] You can also use two different versions of node using nvm eas
 
 nvm install 8.10.0 # just put the node version number Now switch between node versions
 
+```
 $ nvm ls
 ->     v12.14.1
         v13.7.0
@@ -105,8 +109,10 @@ lts/carbon -> v8.17.0 (-> N/A)
 lts/dubnium -> v10.18.1 (-> N/A)
 In my case v12.14.1 and v13.7.0 both are installed, to switch I have to just use
 
+```
+```
 nvm use 12.14.1
-
+```
 Configuring npm for global installations In your home directory, create a directory for global installations:
 
 ```
