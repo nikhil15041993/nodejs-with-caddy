@@ -100,7 +100,7 @@ first stop the application by ```pm2 stop app.js``` check by ```pm2 ls```
 
 we need to run as a service both pm2 and caddy
 
-```pm2 startup`` start pm2 when server reboot ( copy and paste the out put command)
+```pm2 startup``` start pm2 when server reboot ( copy and paste the out put command)
 Caddy as a service ```sudo systemct start caddy``` and ```sudo systemctl enable caddy```
 
 Copy the content of caddy file in demo_expess directory and paste it on /etc/caddy/Caddyfile
