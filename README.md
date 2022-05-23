@@ -69,7 +69,7 @@ sudo apt install caddy
  ## Step 4. Install process manger pm2 to run thi application
  
  ```
- sudo npm -g p2
+ sudo npm install pm2 -g
  ```
  this will run our  aplication in backgroud
  
