@@ -23,14 +23,17 @@ caddy run Caddyfile
 We use a dedicated Caddyfile to serve the Supercharge website. The website’s Caddyfile is named superchargejs.com. It lives beside the default Caddyfile.
 
 The content of the superchargejs.com Caddyfile is this:
+
 ```
 superchargejs.com {  
   reverse_proxy localhost:2021
 }
 ```
+
 We then import the Caddyfile for superchargejs.com inside of the default Caddyfile. Open and edit /etc/caddy/Caddyfile to import the configuration for the Supercharge website:
 
 import ./superchargejs.com
+
 ```
 :80 {
   reverse_proxy localhost:3000
@@ -38,13 +41,16 @@ import ./superchargejs.com
 ```
 
 Then reload Caddy to pick up the changed configuration:
+
 ```
-$ caddy reload Caddyfile
+caddy reload Caddyfile
 ```
 
 ## At a subpath
+
 Here is the equivalent of the sample config above but running under a sub path.
 
+```
 superchargejs.com {
   route /gotify/* {
     uri strip_prefix /gotify
@@ -53,3 +59,5 @@ superchargejs.com {
   }
   redir /gotify /gotify/
 }
+
+```
